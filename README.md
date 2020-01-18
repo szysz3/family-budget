@@ -4,11 +4,14 @@ A simple Flutter app for tracking family expenses.
 
 ## :pig: screenshots
 
-![splash](https://imgur.com/a/3QLyUVi)
-![chart_1](https://imgur.com/a/9LugFKi)
-![chart_2](https://imgur.com/a/EQvnJV9)
-![expense](https://imgur.com/a/XFKV4Dp)
-![settings](https://imgur.com/a/jXYI1Wt)
+<p align="center">
+  <img src="https://i.imgur.com/J3Pielz.png" width="350">
+  <img src="https://i.imgur.com/4B7y8Rk.png" width="350">
+  <img src="https://i.imgur.com/hxt35LB.png" width="350">
+  <img src="https://i.imgur.com/oKqAP93.png" width="350">
+  <img src="https://i.imgur.com/Wc4wZ2e.png" width="350">
+  <img src="https://i.imgur.com/6oUSlpm.png" width="350">
+</p>
 
 ## :grey_exclamation: google-services.json
 
