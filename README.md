@@ -1,16 +1,23 @@
-# family_budget
+# :dollar: family-budget
 
-A new Flutter application.
+A simple Flutter app for tracking family expenses.
 
-## Getting Started
+## :pig: screenshots
 
-This project is a starting point for a Flutter application.
+![splash](https://imgur.com/a/3QLyUVi)
+![chart_1](https://imgur.com/a/9LugFKi)
+![chart_2](https://imgur.com/a/EQvnJV9)
+![expense](https://imgur.com/a/XFKV4Dp)
+![settings](https://imgur.com/a/jXYI1Wt)
 
-A few resources to get you started if this is your first Flutter project:
+## :grey_exclamation: google-services.json
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Please setup Firebase project prior to building the app. google-services.json files are required to build the project.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## :umbrella: license
+
+This project is licensed under the MIT license. See the [LICENSE](https://github.com/szysz3/family-budget/blob/master/LICENSE) file for more info.
+
+## notes
+
+All icons taken from [FlatIcon](https://www.flaticon.com).
