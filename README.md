@@ -1,6 +1,6 @@
 # :dollar: family-budget
 
-A simple Flutter app for tracking family expenses.
+A simple [Flutter](https://github.com/flutter/flutter) app for tracking family expenses. Created for educational purposes.
 
 ## :pig: screenshots
 
@@ -21,6 +21,6 @@ Please setup Firebase project prior to building the app. google-services.json fi
 
 This project is licensed under the MIT license. See the [LICENSE](https://github.com/szysz3/family-budget/blob/master/LICENSE) file for more info.
 
-## notes
+## :paperclip: notes
 
 All icons taken from [FlatIcon](https://www.flaticon.com).
