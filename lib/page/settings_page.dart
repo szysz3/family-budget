@@ -172,7 +172,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "INCOME",
-          style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
         ),
         Container(
           margin: EdgeInsets.only(top: 12, bottom: 32),
