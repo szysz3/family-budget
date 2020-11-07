@@ -31,8 +31,8 @@ class _HomePageState extends State<HomePage> {
               _getDrawerHeader(widget.signInResult),
               _getSettingsElement(),
               Divider(
-                color: Colors.blueGrey[200],
-              ),
+                  // color: Colors.blueGrey[200],
+                  ),
               Builder(builder: (context) => _getLogoutElement(context))
             ],
           ),
@@ -42,11 +42,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getSettingsElement() {
     return ListTile(
-      title: Text('Settings',
-          style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.blueGrey[900])),
+      title: Text(
+        'Settings',
+        // style: TextStyle(
+        //     fontSize: 14,
+        //     fontWeight: FontWeight.w500,
+        //     color: Colors.blueGrey[900])
+      ),
       onTap: () {
         _showSettingsPage(context);
       },
@@ -65,11 +67,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getLogoutElement(BuildContext context) {
     return ListTile(
-      title: Text('Logout',
-          style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.blueGrey[900])),
+      title: Text(
+        'Logout',
+        // style: TextStyle(
+        //     fontSize: 14,
+        //     fontWeight: FontWeight.w500,
+        //     color: Colors.blueGrey[900])
+      ),
       onTap: () {
         _onLogoutPressed(context);
       },
@@ -84,26 +88,27 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getDrawerHeader(SignInResult signInResult) {
     return DrawerHeader(
-        child: Center(
-            child: Column(
-          children: <Widget>[
-            _getUserAvatar(signInResult.imageUrl),
-            _getUserName(signInResult.name),
-            _getUserEmail(signInResult.email)
-          ],
-        )),
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.blueGrey[600], Colors.blueGrey[300]])));
+      child: Center(
+          child: Column(
+        children: <Widget>[
+          _getUserAvatar(signInResult.imageUrl),
+          _getUserName(signInResult.name),
+          _getUserEmail(signInResult.email)
+        ],
+      )),
+      // decoration: BoxDecoration(
+      //     gradient: LinearGradient(
+      //         begin: Alignment.topLeft,
+      //         end: Alignment.bottomRight,
+      //         colors: [Colors.blueGrey[600], Colors.blueGrey[300]]))
+    );
   }
 
   Widget _getUserEmail(String userEmail) {
     return Container(
       child: Text(
         userEmail,
-        style: TextStyle(fontSize: 12, color: Colors.grey[200]),
+        // style: TextStyle(fontSize: 12, color: Colors.grey[200]),
       ),
       margin: EdgeInsets.only(top: 4),
     );
@@ -113,8 +118,8 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Text(
         userName,
-        style: TextStyle(
-            fontSize: 16, color: Colors.grey[100], fontWeight: FontWeight.w700),
+        // style: TextStyle(
+        //     fontSize: 16, color: Colors.grey[100], fontWeight: FontWeight.w700),
       ),
       margin: EdgeInsets.only(top: 16),
     );
@@ -123,10 +128,10 @@ class _HomePageState extends State<HomePage> {
   Widget _getUserAvatar(String avatarUrl) {
     return CircleAvatar(
       radius: 39,
-      backgroundColor: Colors.blueGrey[700],
+      // backgroundColor: Colors.blueGrey[700],
       child: CircleAvatar(
         radius: 38,
-        backgroundColor: Colors.blueGrey[400],
+        // backgroundColor: Colors.blueGrey[400],
         backgroundImage: NetworkImage(avatarUrl),
       ),
     );
@@ -134,9 +139,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getHamburgerMenu(BuildContext context) {
     return RawMaterialButton(
-      elevation: 8,
+      // elevation: 8,
       shape: CircleBorder(),
-      fillColor: Colors.blueGrey[50],
+      // fillColor: Colors.blueGrey[50],
       padding: const EdgeInsets.all(8),
       child: SvgPicture.asset("assets/hamburger.svg", height: 32),
       onPressed: () async {
@@ -156,9 +161,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getExpenseButton(BuildContext context) {
     return RawMaterialButton(
-      elevation: 8,
+      // elevation: 8,
       shape: CircleBorder(),
-      fillColor: Colors.blueGrey[50],
+      // fillColor: Colors.blueGrey[50],
       padding: const EdgeInsets.all(8),
       child: SvgPicture.asset("assets/money.svg", height: 32),
       onPressed: () {
@@ -170,40 +175,40 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getPageContent(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+        // decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //         begin: Alignment.topLeft,
+        //         end: Alignment.bottomRight,
+        //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
         child: Container(
-          margin: EdgeInsets.only(top: 48, bottom: 24),
-          child: Column(
+      margin: EdgeInsets.only(top: 48, bottom: 24),
+      child: Column(
+        children: <Widget>[
+          Row(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  _getHamburgerMenu(context),
-                ],
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: _getChartSwiper(context),
-                      height: 348,
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  _getExpenseButton(context),
-                ],
-              )
+              _getHamburgerMenu(context),
             ],
           ),
-        ));
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  child: _getChartSwiper(context),
+                  height: 348,
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              _getExpenseButton(context),
+            ],
+          )
+        ],
+      ),
+    ));
   }
 
   Widget _getChartSwiper(BuildContext context) {
@@ -239,8 +244,8 @@ class _HomePageState extends State<HomePage> {
         margin: EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 24),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-        elevation: 8,
-        color: Colors.grey[200],
+        // elevation: 8,
+        // color: Colors.grey[200],
         child: Padding(
           padding:
               EdgeInsets.only(left: 24, right: 24, top: topMargin, bottom: 24),

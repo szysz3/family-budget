@@ -20,17 +20,17 @@ class _SplashPage extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey[100],
+        // backgroundColor: Colors.blueGrey[100],
         body: Center(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SvgPicture.asset("assets/piggy-bank.svg", height: 300)
-              ],
-            ),
-          ),
-        ));
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SvgPicture.asset("assets/piggy-bank.svg", height: 300)
+          ],
+        ),
+      ),
+    ));
   }
 
   _goHomeOrLogIn() async {

@@ -23,11 +23,11 @@ class _SettingsPageState extends State<SettingsPage> {
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //         begin: Alignment.topLeft,
+          //         end: Alignment.bottomRight,
+          //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
           child: Builder(builder: (context) => _getPageContent(context))),
     ));
   }
@@ -65,22 +65,22 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget _showLoadingIndicator() {
     return Scaffold(
         body: Container(
-            color: Colors.blueGrey[100],
+            // color: Colors.blueGrey[100],
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: CircularProgressIndicator(),
-                    )
-                  ],
-                )
-              ],
-            )));
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              width: 100,
+              height: 100,
+              child: CircularProgressIndicator(),
+            )
+          ],
+        )
+      ],
+    )));
   }
 
   _initEditingControllers(SettingsModel settingsModel) {
@@ -112,9 +112,9 @@ class _SettingsPageState extends State<SettingsPage> {
     return Padding(
         padding: EdgeInsets.all(8),
         child: RawMaterialButton(
-          elevation: 8,
+          // elevation: 8,
           shape: CircleBorder(),
-          fillColor: Colors.blueGrey[50],
+          // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
           child: SvgPicture.asset("assets/checked.svg", height: 42),
           onPressed: () async {
@@ -156,9 +156,9 @@ class _SettingsPageState extends State<SettingsPage> {
     return Padding(
         padding: EdgeInsets.all(8),
         child: RawMaterialButton(
-          elevation: 8,
+          // elevation: 8,
           shape: CircleBorder(),
-          fillColor: Colors.blueGrey[50],
+          // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
           child: SvgPicture.asset("assets/cancel.svg", height: 32),
           onPressed: () async {
@@ -180,7 +180,7 @@ class _SettingsPageState extends State<SettingsPage> {
           child: TextField(
             keyboardType: TextInputType.number,
             controller: _textEditingControllers[SettingsCategories.income],
-            style: TextStyle(fontSize: 28),
+            // style: TextStyle(fontSize: 28),
             decoration: InputDecoration(hintText: "0.00 PLN"),
             textAlign: TextAlign.center,
           ),
@@ -194,7 +194,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "FIXED EXPENSES",
-          style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
         ),
         Container(
             margin: EdgeInsets.only(top: 12, bottom: 32),
@@ -217,7 +217,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "BUDGET",
-          style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
         ),
         Container(
           margin: EdgeInsets.only(top: 12, bottom: 12),
@@ -266,7 +266,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
     widgets.add(Expanded(
       child: Card(
-        elevation: 8,
+        // elevation: 8,
         child: Padding(
           padding: EdgeInsets.all(8),
           child: TextField(

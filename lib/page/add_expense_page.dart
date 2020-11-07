@@ -35,39 +35,39 @@ class _AddExpenseState extends State<AddExpensePage> {
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //         begin: Alignment.topLeft,
+          //         end: Alignment.bottomRight,
+          //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
           child: Builder(builder: (BuildContext context) {
-            return Container(
-              margin: EdgeInsets.all(24),
-              child: ListView(
-                children: <Widget>[
-                  Container(
-                    height: 200,
-                    child: _getCategoryGridView(context),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 24),
-                    child: _getDescTextField(context),
-                  ),
-                  Container(
-                      width: 250,
-                      padding: EdgeInsets.all(48),
-                      child: _getAmountTextField(context)),
-                  Container(
-                    margin: EdgeInsets.only(top: 36),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: _getBottomButtons(context),
-                    ),
-                  )
-                ],
+        return Container(
+          margin: EdgeInsets.all(24),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                height: 200,
+                child: _getCategoryGridView(context),
               ),
-            );
-          })),
+              Container(
+                margin: EdgeInsets.only(top: 24),
+                child: _getDescTextField(context),
+              ),
+              Container(
+                  width: 250,
+                  padding: EdgeInsets.all(48),
+                  child: _getAmountTextField(context)),
+              Container(
+                margin: EdgeInsets.only(top: 36),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _getBottomButtons(context),
+                ),
+              )
+            ],
+          ),
+        );
+      })),
     ));
   }
 
@@ -76,9 +76,9 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(right: 32),
         child: RawMaterialButton(
-          elevation: 8,
+          // elevation: 8,
           shape: CircleBorder(),
-          fillColor: Colors.blueGrey[50],
+          // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
           child: SvgPicture.asset("assets/cancel.svg", height: 32),
           onPressed: () {
@@ -89,9 +89,9 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(left: 32),
         child: RawMaterialButton(
-          elevation: 8,
+          // elevation: 8,
           shape: CircleBorder(),
-          fillColor: Colors.blueGrey[50],
+          // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
           child: SvgPicture.asset(
             "assets/money.svg",
@@ -137,9 +137,9 @@ class _AddExpenseState extends State<AddExpensePage> {
     return TextField(
       keyboardType: TextInputType.number,
       controller: _amountTextController,
-      style: TextStyle(
-        fontSize: 32,
-      ),
+      // style: TextStyle(
+      //   fontSize: 32,
+      // ),
       decoration: InputDecoration(hintText: "0.00 PLN"),
       textAlign: TextAlign.center,
     );
