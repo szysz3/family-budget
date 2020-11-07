@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        floatingActionButton: _getExpenseButton(context),
         body: Builder(builder: (context) => _getPageContent(context)));
   }
 
@@ -160,16 +161,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _getExpenseButton(BuildContext context) {
-    return RawMaterialButton(
-      // elevation: 8,
-      shape: CircleBorder(),
-      // fillColor: Colors.blueGrey[50],
-      padding: const EdgeInsets.all(8),
-      child: SvgPicture.asset("assets/money.svg", height: 32),
+    return FloatingActionButton(
       onPressed: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => AddExpensePage()));
       },
+      child: SvgPicture.asset("assets/money.svg"),
     );
   }
 
@@ -200,12 +197,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              _getExpenseButton(context),
-            ],
-          )
         ],
       ),
     ));

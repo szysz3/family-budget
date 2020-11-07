@@ -12,7 +12,8 @@ class IconWidget extends StatelessWidget {
     return RawMaterialButton(
       padding: EdgeInsets.all(2),
       child: SvgPicture.asset(_iconPath, height: 48),
-      // fillColor: _isSelected ? Colors.amber[200] : Colors.transparent,
+      fillColor:
+          _isSelected ? Theme.of(context).primaryColor : Colors.transparent,
       shape: CircleBorder(),
       onPressed: null,
     );
