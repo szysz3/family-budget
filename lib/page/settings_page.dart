@@ -23,11 +23,14 @@ class _SettingsPageState extends State<SettingsPage> {
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: Container(
-          // decoration: BoxDecoration(
-          //     gradient: LinearGradient(
-          //         begin: Alignment.topLeft,
-          //         end: Alignment.bottomRight,
-          //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.surface
+              ])),
           child: Builder(builder: (context) => _getPageContent(context))),
     ));
   }
@@ -65,7 +68,6 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget _showLoadingIndicator() {
     return Scaffold(
         body: Container(
-            // color: Colors.blueGrey[100],
             child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -112,10 +114,10 @@ class _SettingsPageState extends State<SettingsPage> {
     return Padding(
         padding: EdgeInsets.all(8),
         child: RawMaterialButton(
-          // elevation: 8,
+          elevation: 8,
+          padding: EdgeInsets.all(2),
           shape: CircleBorder(),
-          // fillColor: Colors.blueGrey[50],
-          padding: const EdgeInsets.all(8),
+          fillColor: Colors.transparent,
           child: SvgPicture.asset("assets/checked.svg", height: 42),
           onPressed: () async {
             _onAcceptButtonPressed(context);
@@ -156,10 +158,9 @@ class _SettingsPageState extends State<SettingsPage> {
     return Padding(
         padding: EdgeInsets.all(8),
         child: RawMaterialButton(
-          // elevation: 8,
+          elevation: 8,
           shape: CircleBorder(),
-          // fillColor: Colors.blueGrey[50],
-          padding: const EdgeInsets.all(8),
+          fillColor: Colors.transparent,
           child: SvgPicture.asset("assets/cancel.svg", height: 32),
           onPressed: () async {
             Navigator.pop(context);

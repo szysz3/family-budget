@@ -8,8 +8,19 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
       primarySwatch: Colors.blueGrey,
-      primaryColor: Colors.blueGrey[700],
-      accentColor: Colors.blueGrey[400],
+      primaryColor: colorSchemeDark.primary,
+      accentColor: colorSchemeDark.secondary,
       cardTheme: CardTheme(elevation: 8),
+      cardColor: colorSchemeDark.surface,
+      canvasColor: colorSchemeDark.background,
+      colorScheme: colorSchemeDark,
       fontFamily: "Montserrat");
+
+  static final ColorScheme colorSchemeDark = ColorScheme.dark(
+      primary: Colors.blueGrey[700],
+      primaryVariant: Colors.blueGrey[900],
+      secondary: Colors.blueGrey[400],
+      secondaryVariant: Colors.blueGrey[600],
+      background: Colors.grey[900],
+      surface: Colors.grey[850]);
 }

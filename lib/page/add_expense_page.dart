@@ -35,39 +35,42 @@ class _AddExpenseState extends State<AddExpensePage> {
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: Container(
-          // decoration: BoxDecoration(
-          //     gradient: LinearGradient(
-          //         begin: Alignment.topLeft,
-          //         end: Alignment.bottomRight,
-          //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.primaryVariant
+              ])),
           child: Builder(builder: (BuildContext context) {
-        return Container(
-          margin: EdgeInsets.all(24),
-          child: ListView(
-            children: <Widget>[
-              Container(
-                height: 200,
-                child: _getCategoryGridView(context),
+            return Container(
+              margin: EdgeInsets.all(24),
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    height: 200,
+                    child: _getCategoryGridView(context),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 24),
+                    child: _getDescTextField(context),
+                  ),
+                  Container(
+                      width: 250,
+                      padding: EdgeInsets.all(48),
+                      child: _getAmountTextField(context)),
+                  Container(
+                    margin: EdgeInsets.only(top: 36),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: _getBottomButtons(context),
+                    ),
+                  )
+                ],
               ),
-              Container(
-                margin: EdgeInsets.only(top: 24),
-                child: _getDescTextField(context),
-              ),
-              Container(
-                  width: 250,
-                  padding: EdgeInsets.all(48),
-                  child: _getAmountTextField(context)),
-              Container(
-                margin: EdgeInsets.only(top: 36),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: _getBottomButtons(context),
-                ),
-              )
-            ],
-          ),
-        );
-      })),
+            );
+          })),
     ));
   }
 
@@ -76,9 +79,10 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(right: 32),
         child: RawMaterialButton(
+          elevation: 8,
+          padding: EdgeInsets.all(1),
           shape: CircleBorder(),
-          // fillColor: Colors.blueGrey[50],
-          padding: const EdgeInsets.all(8),
+          fillColor: Colors.transparent,
           child: SvgPicture.asset("assets/cancel.svg", height: 32),
           onPressed: () {
             Navigator.pop(context);
@@ -88,9 +92,10 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(left: 32),
         child: RawMaterialButton(
+          elevation: 8,
+          padding: EdgeInsets.all(2),
           shape: CircleBorder(),
-          // fillColor: Colors.blueGrey[50],
-          padding: const EdgeInsets.all(8),
+          fillColor: Colors.transparent,
           child: SvgPicture.asset(
             "assets/money.svg",
             height: 52,

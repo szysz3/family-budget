@@ -81,20 +81,22 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getDrawerHeader(SignInResult signInResult) {
     return DrawerHeader(
-      child: Center(
-          child: Column(
-        children: <Widget>[
-          _getUserAvatar(signInResult.imageUrl),
-          _getUserName(signInResult.name),
-          _getUserEmail(signInResult.email)
-        ],
-      )),
-      // decoration: BoxDecoration(
-      //     gradient: LinearGradient(
-      //         begin: Alignment.topLeft,
-      //         end: Alignment.bottomRight,
-      //         colors: [Colors.blueGrey[600], Colors.blueGrey[300]]))
-    );
+        child: Center(
+            child: Column(
+          children: <Widget>[
+            _getUserAvatar(signInResult.imageUrl),
+            _getUserName(signInResult.name),
+            _getUserEmail(signInResult.email)
+          ],
+        )),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.primaryVariant
+            ])));
   }
 
   Widget _getUserEmail(String userEmail) {
@@ -120,10 +122,10 @@ class _HomePageState extends State<HomePage> {
   Widget _getUserAvatar(String avatarUrl) {
     return CircleAvatar(
       radius: 39,
-      // backgroundColor: Colors.blueGrey[700],
+      backgroundColor: Theme.of(context).colorScheme.primary,
       child: CircleAvatar(
         radius: 38,
-        // backgroundColor: Colors.blueGrey[400],
+        backgroundColor: Theme.of(context).colorScheme.primary,
         backgroundImage: NetworkImage(avatarUrl),
       ),
     );
@@ -152,44 +154,50 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getExpenseButton(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => AddExpensePage()));
-      },
-      child: SvgPicture.asset("assets/money.svg"),
-    );
+        elevation: 8,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddExpensePage()));
+        },
+        backgroundColor: Colors.transparent,
+        child: Padding(
+            padding: EdgeInsets.all(2),
+            child: SvgPicture.asset("assets/money.svg")));
   }
 
   Widget _getPageContent(BuildContext context) {
     return Container(
-        // decoration: BoxDecoration(
-        //     gradient: LinearGradient(
-        //         begin: Alignment.topLeft,
-        //         end: Alignment.bottomRight,
-        //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.primaryVariant
+            ])),
         child: Container(
-      margin: EdgeInsets.only(top: 48, bottom: 24),
-      child: Column(
-        children: <Widget>[
-          Row(
+          margin: EdgeInsets.only(top: 48, bottom: 24),
+          child: Column(
             children: <Widget>[
-              _getHamburgerMenu(context),
+              Row(
+                children: <Widget>[
+                  _getHamburgerMenu(context),
+                ],
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      child: _getChartSwiper(context),
+                      height: 348,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: _getChartSwiper(context),
-                  height: 348,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 
   Widget _getChartSwiper(BuildContext context) {
