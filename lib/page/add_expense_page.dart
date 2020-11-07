@@ -137,9 +137,7 @@ class _AddExpenseState extends State<AddExpensePage> {
     return TextField(
       keyboardType: TextInputType.number,
       controller: _amountTextController,
-      // style: TextStyle(
-      //   fontSize: 32,
-      // ),
+      style: Theme.of(context).textTheme.headline4,
       decoration: InputDecoration(hintText: "0.00 PLN"),
       textAlign: TextAlign.center,
     );

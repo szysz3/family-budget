@@ -172,7 +172,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "INCOME",
-          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          style: Theme.of(context).textTheme.headline6,
         ),
         Container(
           margin: EdgeInsets.only(top: 12, bottom: 32),
@@ -180,7 +180,7 @@ class _SettingsPageState extends State<SettingsPage> {
           child: TextField(
             keyboardType: TextInputType.number,
             controller: _textEditingControllers[SettingsCategories.income],
-            // style: TextStyle(fontSize: 28),
+            style: Theme.of(context).textTheme.headline5,
             decoration: InputDecoration(hintText: "0.00 PLN"),
             textAlign: TextAlign.center,
           ),
@@ -194,7 +194,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "FIXED EXPENSES",
-          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          style: Theme.of(context).textTheme.headline6,
         ),
         Container(
             margin: EdgeInsets.only(top: 12, bottom: 32),
@@ -217,7 +217,7 @@ class _SettingsPageState extends State<SettingsPage> {
       children: <Widget>[
         Text(
           "BUDGET",
-          // style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+          style: Theme.of(context).textTheme.headline6,
         ),
         Container(
           margin: EdgeInsets.only(top: 12, bottom: 12),

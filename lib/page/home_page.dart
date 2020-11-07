@@ -30,9 +30,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               _getDrawerHeader(widget.signInResult),
               _getSettingsElement(),
-              Divider(
-                  // color: Colors.blueGrey[200],
-                  ),
+              Divider(),
               Builder(builder: (context) => _getLogoutElement(context))
             ],
           ),
@@ -45,10 +43,7 @@ class _HomePageState extends State<HomePage> {
     return ListTile(
       title: Text(
         'Settings',
-        // style: TextStyle(
-        //     fontSize: 14,
-        //     fontWeight: FontWeight.w500,
-        //     color: Colors.blueGrey[900])
+        style: Theme.of(context).textTheme.subtitle2,
       ),
       onTap: () {
         _showSettingsPage(context);
@@ -70,10 +65,7 @@ class _HomePageState extends State<HomePage> {
     return ListTile(
       title: Text(
         'Logout',
-        // style: TextStyle(
-        //     fontSize: 14,
-        //     fontWeight: FontWeight.w500,
-        //     color: Colors.blueGrey[900])
+        style: Theme.of(context).textTheme.subtitle2,
       ),
       onTap: () {
         _onLogoutPressed(context);
@@ -109,7 +101,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Text(
         userEmail,
-        // style: TextStyle(fontSize: 12, color: Colors.grey[200]),
+        style: Theme.of(context).textTheme.caption,
       ),
       margin: EdgeInsets.only(top: 4),
     );
@@ -119,8 +111,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: Text(
         userName,
-        // style: TextStyle(
-        //     fontSize: 16, color: Colors.grey[100], fontWeight: FontWeight.w700),
+        style: Theme.of(context).textTheme.bodyText1,
       ),
       margin: EdgeInsets.only(top: 16),
     );
