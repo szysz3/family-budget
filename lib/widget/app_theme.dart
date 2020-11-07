@@ -10,5 +10,6 @@ class AppTheme {
       primarySwatch: Colors.blueGrey,
       primaryColor: Colors.blueGrey[700],
       accentColor: Colors.blueGrey[400],
+      cardTheme: CardTheme(elevation: 8),
       fontFamily: "Montserrat");
 }

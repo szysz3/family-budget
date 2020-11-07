@@ -266,7 +266,6 @@ class _SettingsPageState extends State<SettingsPage> {
 
     widgets.add(Expanded(
       child: Card(
-        // elevation: 8,
         child: Padding(
           padding: EdgeInsets.all(8),
           child: TextField(

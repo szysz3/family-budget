@@ -131,7 +131,6 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getHamburgerMenu(BuildContext context) {
     return RawMaterialButton(
-      // elevation: 8,
       shape: CircleBorder(),
       // fillColor: Colors.blueGrey[50],
       padding: const EdgeInsets.all(8),
@@ -226,8 +225,6 @@ class _HomePageState extends State<HomePage> {
         margin: EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 24),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-        // elevation: 8,
-        // color: Colors.grey[200],
         child: Padding(
           padding:
               EdgeInsets.only(left: 24, right: 24, top: topMargin, bottom: 24),

@@ -76,7 +76,6 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(right: 32),
         child: RawMaterialButton(
-          // elevation: 8,
           shape: CircleBorder(),
           // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
@@ -89,7 +88,6 @@ class _AddExpenseState extends State<AddExpensePage> {
       Container(
         margin: EdgeInsets.only(left: 32),
         child: RawMaterialButton(
-          // elevation: 8,
           shape: CircleBorder(),
           // fillColor: Colors.blueGrey[50],
           padding: const EdgeInsets.all(8),
@@ -145,7 +143,6 @@ class _AddExpenseState extends State<AddExpensePage> {
 
   Widget _getDescTextField(BuildContext context) {
     return Card(
-        elevation: 8,
         child: Container(
             padding: EdgeInsets.all(8),
             child: TextField(
