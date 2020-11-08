@@ -20,7 +20,6 @@ class _SplashPage extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: Colors.blueGrey[100],
         body: Center(
       child: Container(
         child: Column(
