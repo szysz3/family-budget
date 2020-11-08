@@ -134,9 +134,11 @@ class _HomePageState extends State<HomePage> {
   Widget _getHamburgerMenu(BuildContext context) {
     return RawMaterialButton(
       shape: CircleBorder(),
-      // fillColor: Colors.blueGrey[50],
+      elevation: 8,
+      fillColor: Theme.of(context).colorScheme.background,
       padding: const EdgeInsets.all(8),
-      child: SvgPicture.asset("assets/hamburger.svg", height: 32),
+      child: SvgPicture.asset("assets/hamburger.svg",
+          height: 32, color: Theme.of(context).colorScheme.primaryVariant),
       onPressed: () async {
         _showOrHideDrawerMenu(context);
       },
