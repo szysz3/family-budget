@@ -98,10 +98,9 @@ abstract class BaseChartState<T extends StatefulWidget, D> extends State<T> {
           width: width,
           isRound: true,
           backDrawRodData: BackgroundBarChartRodData(
-            show: true,
-            y: max,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
+              show: true,
+              y: max,
+              color: Theme.of(context).colorScheme.secondary),
         ),
       ],
       showingTooltipIndicators: showTooltips,
