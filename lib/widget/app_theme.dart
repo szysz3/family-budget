@@ -10,16 +10,16 @@ class AppTheme {
       accentColor: colorSchemeLight.secondary,
       cardTheme: CardTheme(elevation: 8),
       cardColor: colorSchemeLight.surface,
-      canvasColor: colorSchemeLight.background,
+      canvasColor: colorSchemeLight.surface,
       colorScheme: colorSchemeLight,
       fontFamily: "Montserrat");
 
   static final ColorScheme colorSchemeLight = ColorScheme.light(
     primary: Colors.blueGrey[300],
     primaryVariant: Colors.blueGrey[100],
-    secondary: Colors.blueGrey[50],
+    secondary: Colors.blueGrey[100],
     secondaryVariant: Colors.blueGrey[100],
-    background: Colors.blueGrey[50],
+    background: Colors.blueGrey[300],
     surface: Colors.grey[50],
     onSurface: Colors.grey[800],
   );
