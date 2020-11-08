@@ -11,6 +11,10 @@ void main() {
   _initCrashlytics();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) => {
+            SystemChrome.setSystemUIOverlayStyle(
+                SystemUiOverlayStyle(statusBarColor: Colors.transparent))
+          })
       .then((_) {
     runZoned<Future<void>>(() async {
       runApp(FamilyBudgetApp());
