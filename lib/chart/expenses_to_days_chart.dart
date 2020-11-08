@@ -12,8 +12,6 @@ class ExpensesToDaysChart extends StatefulWidget {
 
 class ExpensesToDaysChartState
     extends BaseChartState<ExpensesToDaysChart, ExpensesToDaysModel> {
-  final Color barBackgroundColor = const Color(0xFFC5CAE9);
-
   ExpensesToDaysChartState(Function getData, DateTime dateTime)
       : super(getData, dateTime);
 
@@ -36,7 +34,7 @@ class ExpensesToDaysChartState
     for (var i = 0; i < chartData.length; i++) {
       barChartGroupData.add(makeGroupData(
           100, i, chartData[i].round().toDouble(),
-          limitToMax: true, width: 32, barColor: Color(0xFF7986CB)));
+          limitToMax: true, width: 32));
     }
 
     return barChartGroupData;
@@ -44,7 +42,7 @@ class ExpensesToDaysChartState
 
   @override
   Color getTitleColor() {
-    return Colors.indigo[600];
+    return Theme.of(context).colorScheme.onSurface;
   }
 
   @override
@@ -61,7 +59,7 @@ class ExpensesToDaysChartState
 
   @override
   Color getTooltipBcgColor() {
-    return Colors.indigo;
+    return Theme.of(context).colorScheme.secondaryVariant;
   }
 
   @override
@@ -76,6 +74,6 @@ class ExpensesToDaysChartState
         weekDay = 'days';
     }
     return BarTooltipItem(weekDay + '\n' + "${rod.y.round()} %",
-        TextStyle(color: Colors.orange[200]));
+        TextStyle(color: Theme.of(context).colorScheme.onSurface));
   }
 }

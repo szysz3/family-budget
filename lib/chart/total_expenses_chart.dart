@@ -48,25 +48,25 @@ class TotalExpensesChartState extends State<TotalExpensesChart> {
       switch (i) {
         case 0:
           return PieChartSectionData(
-            color: Colors.blueGrey,
+            color: Theme.of(context).colorScheme.primary,
             value: totalExpensesEntry.key,
             title: "${totalExpensesEntry.key.round()} PLN",
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xffffffff)),
+                color: Theme.of(context).colorScheme.onSurface),
           );
         case 1:
           return PieChartSectionData(
-            color: Colors.blueGrey[300],
+            color: Theme.of(context).colorScheme.secondary,
             value: totalExpensesEntry.value,
             title: "${totalExpensesEntry.value.round()} PLN",
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xffffffff)),
+                color: Theme.of(context).colorScheme.onSurface),
           );
         default:
           return null;

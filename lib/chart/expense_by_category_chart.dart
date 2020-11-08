@@ -45,7 +45,7 @@ class ExpenseByCategoryChartState extends BaseChartState<ExpenseByCategoryChart,
 
   @override
   Color getTitleColor() {
-    return Colors.grey[700];
+    return Theme.of(context).colorScheme.onSurface;
   }
 
   @override
@@ -56,7 +56,7 @@ class ExpenseByCategoryChartState extends BaseChartState<ExpenseByCategoryChart,
 
   @override
   Color getTooltipBcgColor() {
-    return Colors.blueGrey;
+    return Theme.of(context).colorScheme.secondaryVariant;
   }
 
   @override
@@ -65,6 +65,6 @@ class ExpenseByCategoryChartState extends BaseChartState<ExpenseByCategoryChart,
     var keys = data.keys.toList();
     String weekDay = keys[group.x.toInt()];
     return BarTooltipItem(weekDay + '\n' + "${rod.y.round()} %",
-        TextStyle(color: Colors.orange[200]));
+        TextStyle(color: Theme.of(context).colorScheme.onSurface));
   }
 }

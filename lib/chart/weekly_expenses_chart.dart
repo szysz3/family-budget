@@ -12,8 +12,6 @@ class WeeklyExpensesChart extends StatefulWidget {
 
 class WeeklyExpensesChartState
     extends BaseChartState<WeeklyExpensesChart, List<ExpensesWeekly>> {
-  final Color barBackgroundColor = const Color(0xFFCFD8DC);
-
   WeeklyExpensesChartState(Function getData, DateTime dateTime)
       : super(getData, dateTime);
 
@@ -41,7 +39,7 @@ class WeeklyExpensesChartState
 
   @override
   Color getTitleColor() {
-    return Colors.grey[700];
+    return Theme.of(context).colorScheme.onSurface;
   }
 
   @override
@@ -68,7 +66,7 @@ class WeeklyExpensesChartState
 
   @override
   Color getTooltipBcgColor() {
-    return Colors.blueGrey;
+    return Theme.of(context).colorScheme.secondaryVariant;
   }
 
   @override
@@ -99,6 +97,6 @@ class WeeklyExpensesChartState
         break;
     }
     return BarTooltipItem(weekDay + '\n' + "${rod.y.toString()} PLN",
-        TextStyle(color: Colors.orange[200]));
+        TextStyle(color: Theme.of(context).colorScheme.onSurface));
   }
 }

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 abstract class BaseChartState<T extends StatefulWidget, D> extends State<T> {
   final Duration animDuration = Duration(milliseconds: 250);
-  final Color barBackgroundColor = const Color(0xFFCFD8DC);
 
   Function _getData;
   DateTime _dateTime;
@@ -85,7 +84,6 @@ abstract class BaseChartState<T extends StatefulWidget, D> extends State<T> {
 
   BarChartGroupData makeGroupData(double max, int x, double y,
       {bool isTouched = false,
-      Color barColor = const Color(0xFF90A4AE),
       double width = 22,
       List<int> showTooltips = const [],
       limitToMax = false}) {
@@ -94,13 +92,15 @@ abstract class BaseChartState<T extends StatefulWidget, D> extends State<T> {
       barRods: [
         BarChartRodData(
           y: limitToMax ? (y > max ? max : y) : y,
-          color: isTouched ? Colors.orange[400] : barColor,
+          color: isTouched
+              ? Colors.orange[400]
+              : Theme.of(context).colorScheme.primary,
           width: width,
           isRound: true,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             y: max,
-            color: barBackgroundColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ],
