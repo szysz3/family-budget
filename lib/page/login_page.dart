@@ -18,29 +18,32 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          // decoration: BoxDecoration(
-          //     gradient: LinearGradient(
-          //         begin: Alignment.topLeft,
-          //         end: Alignment.bottomRight,
-          //         colors: [Colors.blueGrey[200], Colors.blueGrey[100]])),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.surface
+              ])),
           child: Builder(builder: (BuildContext context) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(bottom: 32),
-              child: Text(
-                'Please log in',
-                // style: TextStyle(fontSize: 40, color: Colors.grey[200]),
-              ),
-            ),
-            SizedBox(
-              height: 200,
-              child: _getLoginButtonsCard(context),
-            ),
-          ],
-        );
-      })),
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: const EdgeInsets.only(bottom: 32),
+                  child: Text(
+                    'Please log in',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+                SizedBox(
+                  height: 200,
+                  child: _getLoginButtonsCard(context),
+                ),
+              ],
+            );
+          })),
     );
   }
 
@@ -49,24 +52,27 @@ class _LoginPageState extends State<LoginPage> {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
         margin: const EdgeInsets.only(left: 32, right: 32),
-        // elevation: 8,
-        // color: Colors.grey[200],
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            _getLoginButton(context, "assets/google.svg",
+                _onGoogleSignInPressed, CircleBorder()),
             _getLoginButton(
-                context, "assets/google.svg", _onGoogleSignInPressed),
-            _getLoginButton(
-                context, "assets/facebook.svg", _onFacebookSignInPressed)
+                context,
+                "assets/facebook.svg",
+                _onFacebookSignInPressed,
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0))))
           ],
         ));
   }
 
-  Widget _getLoginButton(
-      BuildContext context, String iconPath, Function onPressedAction) {
-    return Expanded(
+  Widget _getLoginButton(BuildContext context, String iconPath,
+      Function onPressedAction, OutlinedBorder border) {
+    return Flexible(
       child: RawMaterialButton(
         elevation: 0,
-        shape: CircleBorder(),
+        shape: border,
         onPressed: () {
           onPressedAction(context);
         },
