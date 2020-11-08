@@ -14,8 +14,9 @@ class FamilyBudgetApp extends StatelessWidget {
           child: child,
         );
       },
-      title: 'Flutter Demo',
+      title: 'Family Budget',
       theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: SplashPage(),
     );
   }
